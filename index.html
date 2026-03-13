@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedCare Clinic — Advanced Medical Care</title>
+  <meta name="description" content="MedCare Clinic provides high-quality medical consultations and treatments using modern technology and experienced specialists." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons (lightweight icon set) -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- ========================================================
+       NAVBAR
+       ======================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <!-- Brand -->
+      <a href="#home" class="navbar__brand">
+        <div class="navbar__brand-icon"><i class="ph ph-first-aid"></i></div>
+        MedCare Clinic
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="navbar__links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="navbar__cta">
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <i class="ph ph-moon" id="darkIcon"></i>
+        </button>
+        <a href="https://wa.me/213000000000?text=Hello%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener" class="btn btn--primary">
+          <i class="ph ph-calendar-check"></i> Book Appointment
+        </a>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <!-- Dark mode toggle (mobile) -->
+        <button class="dark-toggle" id="darkToggleMobile" aria-label="Toggle dark mode">
+          <i class="ph ph-moon" id="darkIconMobile"></i>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="navbar__hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#reviews" class="mobile-link">Reviews</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="https://wa.me/213000000000?text=Hello%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener" class="btn btn--primary">
+      <i class="ph ph-calendar-check"></i> Book Appointment
+    </a>
+  </div>
+
+  <!-- ========================================================
+       HERO
+       ======================================================== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero__grid">
+        <!-- Text content -->
+        <div class="hero__content reveal">
+          <div class="hero__badge">
+            <i class="ph ph-shield-check"></i> Trusted by ????+ Patients
+          </div>
+          <h1 class="hero__title">
+            Advanced Medical Care<br />for You and <span>Your Family</span>
+          </h1>
+          <p class="hero__desc">
+            At MedCare Clinic we provide high-quality medical consultations and treatments using modern technology and experienced specialists.
+          </p>
+          <div class="hero__actions">
+            <a href="https://wa.me/213000000000?text=Hello%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener" class="btn btn--primary">
+              <i class="ph ph-whatsapp-logo"></i> Book Consultation
+            </a>
+            <a href="#services" class="btn btn--outline">
+              <i class="ph ph-arrow-down"></i> Our Services
+            </a>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="hero__image reveal">
+          <img src="images/hero_img.jpg" alt="">
+          <!-- Floating card -->
+          <div class="hero__float-card">
+            <div class="icon-circle"><i class="ph ph-users-three"></i></div>
+            <div class="text">
+              <strong>??+ Specialists</strong>
+              <span>Ready to help</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SERVICES
+       ======================================================== -->
+  <section class="section section--gray" id="services">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Our Medical Services</h2>
+        <p class="section-subtitle mx-auto">Comprehensive healthcare solutions tailored to your needs, delivered by certified medical professionals.</p>
+      </div>
+
+      <div class="services__grid">
+        <!-- Card 1 -->
+        <div class="service-card reveal">
+          <div class="service-card__icon"><i class="ph ph-heartbeat"></i></div>
+          <h3 class="service-card__title">General Consultation</h3>
+          <p class="service-card__desc">Expert general medical consultations for diagnosis, prevention, and ongoing health management for all ages.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card reveal">
+          <div class="service-card__icon"><i class="ph ph-tooth"></i></div>
+          <h3 class="service-card__title">Dental Care</h3>
+          <p class="service-card__desc">Complete dental services including cleaning, whitening, fillings, and cosmetic dentistry using the latest equipment.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card reveal">
+          <div class="service-card__icon"><i class="ph ph-drop-half-bottom"></i></div>
+          <h3 class="service-card__title">Dermatology</h3>
+          <p class="service-card__desc">Specialized skin care treatments from medical dermatology to cosmetic procedures for healthy, glowing skin.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="service-card reveal">
+          <div class="service-card__icon"><i class="ph ph-sparkle"></i></div>
+          <h3 class="service-card__title">Aesthetic Treatments</h3>
+          <p class="service-card__desc">Advanced non-surgical aesthetic procedures including fillers, Botox, and skin rejuvenation treatments.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="service-card reveal">
+          <div class="service-card__icon"><i class="ph ph-clipboard-text"></i></div>
+          <h3 class="service-card__title">Health Checkups</h3>
+          <p class="service-card__desc">Comprehensive health screening packages designed for early detection and preventive healthcare.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="service-card reveal">
+          <div class="service-card__icon"><i class="ph ph-first-aid"></i></div>
+          <h3 class="service-card__title">Minor Surgery</h3>
+          <p class="service-card__desc">Safe outpatient minor surgical procedures performed by experienced surgeons in a sterile, modern facility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       ABOUT
+       ======================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <!-- Image -->
+        <div class="about__image reveal">
+          <div class="placeholder-img placeholder-img--about">
+            <i class="ph ph-hospital"></i>
+            <span>Clinic Interior Photo</span>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="about__text reveal">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title">About MedCare Clinic</h2>
+          <p>
+            MedCare Clinic was founded with a single mission: to provide accessible, world-class healthcare to every patient who walks through our doors. Our team of experienced doctors and medical specialists is dedicated to delivering patient-focused treatment in a comfortable, modern environment.
+          </p>
+          <p>
+            Equipped with cutting-edge medical technology and guided by the highest standards of care, we ensure that every consultation, diagnosis, and procedure is carried out with precision and compassion. Your well-being is our priority.
+          </p>
+
+          <!-- Stats -->
+          <div class="about__stats">
+            <div class="stat-card">
+              <div class="stat-card__number" data-count="10">0</div>
+              <div class="stat-card__label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__number" data-count="5000">0</div>
+              <div class="stat-card__label">Happy Patients</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__number" data-count="15">0</div>
+              <div class="stat-card__label">Medical Specialists</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       WHY CHOOSE US
+       ======================================================== -->
+  <section class="section section--gray" id="why-us">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Our Advantages</span>
+        <h2 class="section-title">Why Patients Choose Us</h2>
+        <p class="section-subtitle mx-auto">We combine medical expertise with genuine care to deliver an outstanding patient experience.</p>
+      </div>
+
+      <div class="features__grid">
+        <div class="feature-card reveal">
+          <div class="feature-card__icon"><i class="ph ph-medal"></i></div>
+          <h3 class="feature-card__title">Experienced Doctors</h3>
+          <p class="feature-card__desc">Our physicians bring decades of combined clinical experience across multiple specialities.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon"><i class="ph ph-monitor"></i></div>
+          <h3 class="feature-card__title">Modern Equipment</h3>
+          <p class="feature-card__desc">State-of-the-art diagnostic and treatment equipment for accurate results and effective care.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon"><i class="ph ph-note-pencil"></i></div>
+          <h3 class="feature-card__title">Personalized Plans</h3>
+          <p class="feature-card__desc">Every treatment plan is customized to fit your unique health needs and lifestyle.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon"><i class="ph ph-calendar-check"></i></div>
+          <h3 class="feature-card__title">Quick Scheduling</h3>
+          <p class="feature-card__desc">Book your appointment in seconds via WhatsApp — no waiting, no complicated forms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       TESTIMONIALS
+       ======================================================== -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">What Our Patients Say</h2>
+        <p class="section-subtitle mx-auto">Real feedback from real patients who trust MedCare Clinic with their health.</p>
+      </div>
+
+      <div class="testimonials__grid">
+        <!-- Review 1 -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+          </div>
+          <p class="testimonial-card__text">"The level of care I received was exceptional. The doctors were attentive, professional, and made me feel completely at ease throughout my treatment."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">SA</div>
+            <div>
+              <div class="testimonial-card__name">Sarah A.</div>
+              <div class="testimonial-card__role">General Consultation</div>
+            </div>
+          </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+          </div>
+          <p class="testimonial-card__text">"I was nervous about my dental procedure, but the team at MedCare made the experience painless and stress-free. Highly recommend their dental services!"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">KM</div>
+            <div>
+              <div class="testimonial-card__name">Karim M.</div>
+              <div class="testimonial-card__role">Dental Care</div>
+            </div>
+          </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+          </div>
+          <p class="testimonial-card__text">"Modern facility, friendly staff, and very quick appointment scheduling. I booked through WhatsApp and was seen the same day. Outstanding service."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">LB</div>
+            <div>
+              <div class="testimonial-card__name">Lina B.</div>
+              <div class="testimonial-card__role">Dermatology</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CTA
+       ======================================================== -->
+  <section class="cta-section" id="contact">
+    <div class="container reveal">
+      <h2 class="cta-section__title">Need Medical Advice? Contact Our Clinic Today</h2>
+      <p class="cta-section__desc">Our team is ready to help. Reach out via WhatsApp for a fast, convenient consultation booking.</p>
+      <a href="https://wa.me/213000000000?text=Hello%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener" class="btn btn--whatsapp">
+        <i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp
+      </a>
+
+      <div class="cta-section__info">
+        <div class="cta-section__info-item">
+          <i class="ph ph-phone"></i> +213 000 000 000
+        </div>
+        <div class="cta-section__info-item">
+          <i class="ph ph-map-pin"></i> 123 Medical Avenue, City Center
+        </div>
+        <div class="cta-section__info-item">
+          <i class="ph ph-clock"></i> Mon – Sat: 08:00 – 18:00
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MAP
+       ======================================================== -->
+  <section class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.019!2d3.042!3d36.753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQ1JzEwLjgiTiAzwrAwMiczMC43IkU!5e0!3m2!1sen!2s!4v1700000000000"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="MedCare Clinic location"></iframe>
+    <p class="map-section__note">
+      Visit our clinic or contact us through <a href="https://wa.me/213000000000?text=Hello%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener">WhatsApp</a> to book your consultation.
+    </p>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Col 1: Brand -->
+        <div>
+          <div class="footer__brand">
+            <div class="footer__brand-icon"><i class="ph ph-first-aid"></i></div>
+            MedCare Clinic
+          </div>
+          <p class="footer__desc">Providing modern, accessible, and compassionate healthcare to our community since 2014.</p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="#services">General Consultation</a></li>
+            <li><a href="#services">Dental Care</a></li>
+            <li><a href="#services">Dermatology</a></li>
+            <li><a href="#services">Aesthetic Treatments</a></li>
+            <li><a href="#services">Health Checkups</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div>
+          <h4 class="footer__heading">Contact Us</h4>
+          <ul class="footer__contact">
+            <li><i class="ph ph-map-pin"></i> 123 Medical Avenue, City Center</li>
+            <li><i class="ph ph-phone"></i> +213 000 000 000</li>
+            <li><i class="ph ph-envelope"></i> contact@medcareclinic.com</li>
+            <li><i class="ph ph-clock"></i> Mon – Sat: 08:00 – 18:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        &copy; 2026 MedCare Clinic. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       FLOATING WHATSAPP
+       ======================================================== -->
+  <a href="https://wa.me/213000000000?text=Hello%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
