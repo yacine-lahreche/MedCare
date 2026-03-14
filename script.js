@@ -94,3 +94,31 @@ if (saved) {
 
 darkToggle.addEventListener('click', toggleTheme);
 darkToggleMobile.addEventListener('click', toggleTheme);
+
+/* ---- Testimonials Carousel ---- */
+const testimonialsWrapper = document.getElementById('testimonialsWrapper');
+const testimonialsTrack = document.getElementById('testimonialsTrack');
+
+if (testimonialsWrapper && testimonialsTrack) {
+  // First, multiply original cards within main track to ensure one track is wider than any screen
+  const cards = Array.from(testimonialsTrack.children);
+  // Add 2 more sets for a total of 18 cards per track (approx 6800px width for 6 cards)
+  for (let i = 0; i < 2; i++) {
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.classList.remove('reveal');
+      clone.classList.add('visible');
+      testimonialsTrack.appendChild(clone);
+    });
+  }
+
+  // Clone the entire track for the seamless CSS transform scroll
+  const trackClone = testimonialsTrack.cloneNode(true);
+  trackClone.setAttribute('aria-hidden', 'true');
+  // Make sure original cards inside track clone are also visible
+  trackClone.querySelectorAll('.reveal').forEach(el => {
+    el.classList.remove('reveal');
+    el.classList.add('visible');
+  });
+  testimonialsWrapper.appendChild(trackClone);
+}
