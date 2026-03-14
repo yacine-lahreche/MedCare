@@ -86,7 +86,7 @@ ul { list-style: none; }
 .section-subtitle {
   font-size: 1.05rem;
   color: var(--gray-500);
-  max-width: 560px;
+  max-width: fit-content;
   margin-bottom: 40px;
 }
 
