@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,17 +42,17 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <!-- Desktop CTA -->
-      <div class="navbar__cta">
-        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-          <i class="ph ph-moon" id="darkIcon"></i>
-        </button>
-        <a href="https://wa.me/213000000000?text=Hello%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener" class="btn btn--primary">
-          <i class="ph ph-calendar-check"></i> Book Appointment
-        </a>
-      </div>
-      
       <div style="display: flex; align-items: center; gap: 12px;">
+        <!-- Desktop CTA -->
+        <div class="navbar__cta">
+          <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+            <i class="ph ph-moon" id="darkIcon"></i>
+          </button>
+          <a href="https://wa.me/213000000000?text=Hello%20I%20would%20like%20to%20book%20a%20consultation" target="_blank" rel="noopener" class="btn btn--primary">
+            <i class="ph ph-calendar-check"></i> Book Appointment
+          </a>
+        </div>
+
         <!-- Dark mode toggle (mobile) -->
         <button class="dark-toggle" id="darkToggleMobile" aria-label="Toggle dark mode">
           <i class="ph ph-moon" id="darkIconMobile"></i>
@@ -266,7 +265,8 @@
         <p class="section-subtitle mx-auto">Real feedback from real patients who trust MedCare Clinic with their health.</p>
       </div>
 
-      <div class="testimonials__grid">
+      <div class="testimonials__wrapper" id="testimonialsWrapper">
+        <div class="testimonials__track" id="testimonialsTrack">
         <!-- Review 1 -->
         <div class="testimonial-card reveal">
           <div class="testimonial-card__stars">
@@ -308,6 +308,49 @@
               <div class="testimonial-card__role">Dermatology</div>
             </div>
           </div>
+        </div>
+        <!-- Review 4 -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+          </div>
+          <p class="testimonial-card__text">"Very professional clinic with a warm and welcoming atmosphere. The doctors take their time to listen and provide accurate diagnoses."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">AH</div>
+            <div>
+              <div class="testimonial-card__name">Ahmed H.</div>
+              <div class="testimonial-card__role">Health Checkup</div>
+            </div>
+          </div>
+        </div>
+        <!-- Review 5 -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+          </div>
+          <p class="testimonial-card__text">"I visited for an aesthetic treatment and the results exceeded my expectations. The staff is highly trained and incredibly supportive."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">FT</div>
+            <div>
+              <div class="testimonial-card__name">Fatima T.</div>
+              <div class="testimonial-card__role">Aesthetic Treatments</div>
+            </div>
+          </div>
+        </div>
+        <!-- Review 6 -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+          </div>
+          <p class="testimonial-card__text">"Excellent care during my minor surgical procedure. Everything went smoothly, and the follow-up was top-notch."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">YO</div>
+            <div>
+              <div class="testimonial-card__name">Younes O.</div>
+              <div class="testimonial-card__role">Minor Surgery</div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
