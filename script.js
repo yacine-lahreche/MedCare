@@ -1,82 +1,18 @@
+/* ---- Phone Number Input Masking ---- */
+const PHONE = '213XXXXXXXXX';
+document.querySelectorAll('[data-phone-whatsapp]')
+  .forEach(el => el.href = `https://wa.me/${PHONE}`);
+document.querySelectorAll('[data-phone-call]')
+  .forEach(el => el.href = `tel:${PHONE}`);
 
-/* ---- Mobile menu toggle ---- */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-
-// Close mobile menu on link click
-document.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-});
-
-/* ---- Navbar scroll shadow ---- */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 10);
-});
-
-/* ---- Scroll reveal ---- */
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    } else {
-      entry.target.classList.remove('visible');
-    }
-  });
-}, { threshold: 0.12 });
-
-revealElements.forEach(el => revealObserver.observe(el));
-
-/* ---- Counter animation ---- */
-const counters = document.querySelectorAll('[data-count]');
-let countersAnimated = false;
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !countersAnimated) {
-      countersAnimated = true;
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'), 10);
-        const suffix = target >= 100 ? '+' : '+';
-        const duration = 1800;
-        const step = Math.ceil(target / (duration / 16));
-        let current = 0;
-
-        const tick = () => {
-          current += step;
-          if (current >= target) {
-            counter.textContent = target.toLocaleString() + suffix;
-            return;
-          }
-          counter.textContent = current.toLocaleString() + suffix;
-          requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      });
-    }
-  });
-}, { threshold: 0.5 });
-
-counters.forEach(c => counterObserver.observe(c));
-
-/* ---- Dark mode toggle ---- */
-const darkToggle = document.getElementById('darkToggle');
-const darkToggleMobile = document.getElementById('darkToggleMobile');
-const darkIcon = document.getElementById('darkIcon');
-const darkIconMobile = document.getElementById('darkIconMobile');
+/* ---- Dark Mode Toggle ---- */
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
 
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-  const iconClass = theme === 'dark' ? 'ph ph-sun' : 'ph ph-moon';
-  darkIcon.className = iconClass;
-  darkIconMobile.className = iconClass;
+  localStorage.setItem('liquid_theme', theme);
+  themeIcon.className = theme === 'dark' ? 'ph-fill ph-sun' : 'ph ph-moon';
 }
 
 function toggleTheme() {
@@ -84,41 +20,92 @@ function toggleTheme() {
   setTheme(current === 'dark' ? 'light' : 'dark');
 }
 
-// Initialize from localStorage or system preference
-const saved = localStorage.getItem('theme');
+const saved = localStorage.getItem('liquid_theme');
 if (saved) {
   setTheme(saved);
-} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
   setTheme('dark');
 }
 
-darkToggle.addEventListener('click', toggleTheme);
-darkToggleMobile.addEventListener('click', toggleTheme);
+themeToggle.addEventListener('click', toggleTheme);
 
-/* ---- Testimonials Carousel ---- */
-const testimonialsWrapper = document.getElementById('testimonialsWrapper');
-const testimonialsTrack = document.getElementById('testimonialsTrack');
-
-if (testimonialsWrapper && testimonialsTrack) {
-  // First, multiply original cards within main track to ensure one track is wider than any screen
-  const cards = Array.from(testimonialsTrack.children);
-  // Add 2 more sets for a total of 18 cards per track (approx 6800px width for 6 cards)
-  for (let i = 0; i < 2; i++) {
+/* ---- Seamless Infinite Scroll Carousel ---- */
+const experiencesTrack = document.getElementById('experiencesTrack');
+if (experiencesTrack) {
+  const cards = Array.from(experiencesTrack.children);
+  // Duplicate cards a few times to fill the track
+  for(let i=0; i<3; i++) {
     cards.forEach(card => {
-      const clone = card.cloneNode(true);
-      clone.classList.remove('reveal');
-      clone.classList.add('visible');
-      testimonialsTrack.appendChild(clone);
+      experiencesTrack.appendChild(card.cloneNode(true));
     });
   }
-
-  // Clone the entire track for the seamless CSS transform scroll
-  const trackClone = testimonialsTrack.cloneNode(true);
+  
+  // Clone the entire track placing it side-by-side
+  const trackClone = experiencesTrack.cloneNode(true);
   trackClone.setAttribute('aria-hidden', 'true');
-  // Make sure original cards inside track clone are also visible
-  trackClone.querySelectorAll('.reveal').forEach(el => {
-    el.classList.remove('reveal');
-    el.classList.add('visible');
-  });
-  testimonialsWrapper.appendChild(trackClone);
+  experiencesTrack.parentElement.appendChild(trackClone);
+  
+  // Update parent styling to ensure correct flex layout for tracks
+  experiencesTrack.parentElement.style.display = 'flex';
+  experiencesTrack.parentElement.style.gap = '24px';
 }
+
+/* ---- Sticky Navbar Shadow ---- */
+const header = document.querySelector('.header-sticky');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+/* ---- Scroll Reveal Animation ---- */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible'); 
+    } else {
+      entry.target.classList.remove('visible'); // Makes the animation re-trigger when scrolling back up
+    }
+  });
+}, { threshold: 0.15 });
+
+// Dynamically add reveal class to important elements if they don't have it
+const elementsToReveal = document.querySelectorAll('.hero-content, .hero-image-wrapper, .bento-card, .specialist-card, .visit-info-card, .visit-map');
+elementsToReveal.forEach(el => {
+  el.classList.add('reveal');
+  revealObserver.observe(el);
+});
+
+/* ---- Active Nav Link Updates ---- */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+// Click logic to ensure instant feedback
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const currentId = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        // Handle both index.html#id and #id formats
+        if (href === `#${currentId}` || href.endsWith(`#${currentId}`)) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -60% 0px', threshold: 0.15 }); 
+
+sections.forEach(section => {
+  scrollObserver.observe(section);
+});
